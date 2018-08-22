@@ -1,0 +1,12 @@
+<div>
+    <p>{{task.status}}</p>
+  <p>{{task.note}}</p>
+  <p>{{task.deadLine}}</p>
+  <form (ngSubmit)="onSubmit()" class="ml-5 d-flex flex-column align-items-center">
+      <input type="text" [(ngModel)]="task.id" placeholder="id" id="id" name='id'/>
+      <button>effacer</button>
+    </form>
+</div>
+
+
+
