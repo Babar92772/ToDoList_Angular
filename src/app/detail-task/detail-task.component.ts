@@ -9,15 +9,26 @@ import { TaskServiceService } from '../task-service.service';
 })
 export class DetailTaskComponent implements OnInit {
   @Input() task : Task;
-  constructor(private service : TaskServiceService) { }
+  constructor(private service : TaskServiceService) {
+    this.task = new Task();
+   }
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    this.service.deleteTask(this.task.id);
+  onSubmitDelete(){
+    console.log(this.task.id);
+    
+    //this.service.deleteTask(this.task.id);
     console.log('on finit le delete dans le componnent');
     
+  }
+
+  onSubmitUpdate(){
+    console.log("update");
+    console.log(this.task.id);
+    
+    this.service.updateTask(this.task.id, this.task.note, this.task.status);
   }
 
 }

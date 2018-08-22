@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Task } from './Task';
 import { TASK } from './mock_task';
 import { Observable, of } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class TaskServiceService {
   task : Array<Task>
-  constructor() { 
+  constructor(private http: HttpClient) { 
     this.task = TASK;
   }
   getTask():Observable<Task[]>{
@@ -22,6 +23,16 @@ export class TaskServiceService {
 
   deleteTask(id:number) {
     console.log(id);
-    this.task[id].note;
+    const uri = 'http://localhost:4000/note' + id;
+
+    return this
+        .http.delete(uri).subscribe;
+  }
+
+  updateTask( id:number, note:string, status:string){
+    console.log(this.task[id-1]);
+    
+    //this.task[id].status = status;
+    //this.task[id].note = note;
   }
 }

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import{RouterModule, Routes} from '@angular/Router';
 import { AppComponent } from './app.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 //import Perso
 import { DetailTaskComponent } from './detail-task/detail-task.component';
@@ -18,7 +20,8 @@ const routes: Routes=[
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]
