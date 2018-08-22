@@ -32,7 +32,7 @@ export class TaskServiceService {
   updateTask( id:number, note:string, status:string){
     console.log(this.task[id-1]);
     
-    //this.task[id].status = status;
-    //this.task[id].note = note;
+    this.task[id-1].status = status;
+    this.task[id-1].note = note;
   }
 }
