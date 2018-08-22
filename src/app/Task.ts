@@ -12,7 +12,7 @@ export class Task {
         this.status = status === undefined ? '' : status;
         this.note = note === undefined ? '':note;
         this.creation = new Date();
-        this.deadLine = deadLine === undefined ? new Date(1992,1,21):deadLine;
+        this.deadLine = deadLine === undefined ? new Date():deadLine;
         this.IdUserCreator = IdUserCreator === undefined ? 0:IdUserCreator;
         this.idUser = idUser === undefined ? []:idUser;
     }
