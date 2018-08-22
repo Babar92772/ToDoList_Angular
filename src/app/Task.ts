@@ -9,7 +9,7 @@ export class Task {
     idUser:Array<number>;
 
     constructor(creation?:Date,status?:string, note?:string,deadLine?:Date,IdUserCreator?:number, idUser?:Array<number>){
-        this.status = status === undefined ? '' : status;
+        this.status = status === undefined ? 'todo' : status;
         this.note = note === undefined ? '':note;
         this.creation = new Date();
         this.deadLine = deadLine === undefined ? new Date():deadLine;

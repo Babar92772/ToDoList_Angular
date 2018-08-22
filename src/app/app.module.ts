@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import {CalendarModule} from 'primeng/calendar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+  
 //import Perso
 import { DetailTaskComponent } from './detail-task/detail-task.component';
 import { AddTaskComponent } from './add-task/add-task.component';

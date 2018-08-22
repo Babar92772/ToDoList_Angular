@@ -21,10 +21,9 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSubmit(){
-    this.task = new Task();
     this.service.addTask(this.task);
     console.log('on finit le add dans le componnent');
-    
+    this.task = new Task();
   }
 
 }

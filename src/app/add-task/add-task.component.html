@@ -1,18 +1,7 @@
-<!-- 
-<div class="container">
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <input name="note" type="text" class="form-control" id="note" placeholder="rentrez la tache" required>
-      </div>
- 
-      <button type="submit">Submit</button>
- 
-    </form>
-</div> -->
+
 
 <form (ngSubmit)="onSubmit()" class="ml-5 d-flex flex-column align-items-center">
     <input type="text" [(ngModel)]="task.note" placeholder="note" id="note" name='note'/>
-    <input type="text" [(ngModel)]="task.status" placeholder="status" id="status" name='status'/>
     <p-calendar type="text" dateFormat="dd/mm/yy" [(ngModel)]="task.deadLine" name="deadLine"></p-calendar>
     <button >créer tâche</button>
   </form>
