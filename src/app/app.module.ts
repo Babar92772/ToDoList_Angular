@@ -13,22 +13,28 @@ import { DetailTaskComponent } from './detail-task/detail-task.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { TaskServiceService } from './task-service.service';
 import { UserService } from './user.service';
+import { LoginComponent } from './login/login.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 const routes: Routes=[
-  {path:'listTasks',component: DetailTaskComponent}
+  {path:'',component: LoginComponent},
+  {path:'listTasks',component: TodolistComponent}
 ];
 @NgModule({
   declarations: [
     AppComponent,
     DetailTaskComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    LoginComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     CalendarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [FormBuilder, TaskServiceService, UserService],
   bootstrap: [AppComponent]

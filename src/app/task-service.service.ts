@@ -27,7 +27,16 @@ export class TaskServiceService {
 
     // return this
     //     .http.delete(uri).subscribe;
-    console.log(this.task.slice(id,2));
+    const index: number = this.task.indexOf(this.task[id]);
+    console.log(index);
+    
+    if (index !== -1) {
+      console.log(this.task.splice(index, index+1));
+      
+        //this.task.splice(index-1, 1);
+    }        
+    //console.log(this.task.slice(id-1,id));
+    //this.task = this.task.slice(id,1); 
   }
 
   updateTask( id:number, note:string, status:string){

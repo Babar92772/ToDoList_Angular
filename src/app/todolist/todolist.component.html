@@ -1,0 +1,8 @@
+<h2>page todolist</h2>
+<app-add-task></app-add-task>
+<ul class="bg-primary">
+  <li *ngFor="let t of tasks">
+  
+    <app-detail-task [task]="t"></app-detail-task>
+  </li>
+</ul>

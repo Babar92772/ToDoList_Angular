@@ -19,7 +19,7 @@ export class DetailTaskComponent implements OnInit {
   onSubmitDelete(){
     console.log(this.task.id);
     
-    //this.service.deleteTask(this.task.id);
+    this.service.deleteTask(this.task.id);
     console.log('on finit le delete dans le componnent');
     
   }
