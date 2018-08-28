@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 //import perso
-import{Task} from '../Task';
+import{Tasks} from '../Tasks';
 import { TaskServiceService } from '../task-service.service';
 @Component({
   selector: 'app-detail-task',
@@ -8,27 +8,27 @@ import { TaskServiceService } from '../task-service.service';
   styleUrls: ['./detail-task.component.css']
 })
 export class DetailTaskComponent implements OnInit {
-  @Input() task : Task;
+  @Input() task : Tasks;
   constructor(private service : TaskServiceService) {
-    this.task = new Task();
+    this.task = new Tasks();
    }
 
   ngOnInit() {
   }
 
-  onSubmitDelete(){
-    console.log(this.task.id);
+  // onSubmitDelete(){
+  //   console.log(this.task.ID);
     
-    this.service.deleteTask(this.task.id);
-    console.log('on finit le delete dans le componnent');
+  //   this.service.deleteTask(this.task.ID);
+  //   console.log('on finit le delete dans le componnent');
     
-  }
+  // }
 
   onSubmitUpdate(){
     console.log("update");
-    console.log(this.task.id);
+    console.log(this.task.ID);
     
-    this.service.updateTask(this.task.id, this.task.note, this.task.status);
+    this.service.updateTask(this.task.ID, this.task.Note, this.task.TaskState);
   }
 
 }

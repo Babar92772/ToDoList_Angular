@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import{RouterModule, Routes} from '@angular/Router';
+import{RouterModule, Routes} from 'node_modules/@angular/router/fesm5/router.js';
 import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import {CalendarModule} from 'primeng/calendar';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   
 //import Perso
 import { DetailTaskComponent } from './detail-task/detail-task.component';
@@ -30,10 +30,10 @@ const routes: Routes=[
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     CalendarModule,
-    BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [FormBuilder, TaskServiceService, UserService],

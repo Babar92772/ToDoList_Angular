@@ -1,16 +1,16 @@
 <div>
-    <p>{{task.status}}</p>
-    <p>creation :{{task.creation}}</p>
-  <p>{{task.note}}</p>
-  <p>{{task.deadLine}}</p>
+    <p>{{task.TaskState}}</p>
+    <p>creation :{{task.CreateDate}}</p>
+  <p>{{task.Note}}</p>
+  <p>{{task.DeadLine}}</p>
   <form (ngSubmit)="onSubmitDelete()" class="ml-5 d-flex flex-column align-items-center">
       <input type="text" [(ngModel)]="task.id" placeholder="id" id="id" name='id'/>
       <button>effacer</button>
     </form>
     <form (ngSubmit)="onSubmitUpdate()" class="ml-5 d-flex flex-column align-items-center">
-        <input type="text" [(ngModel)]="task.note" placeholder="note" id="note" name='note'/>
+        <input type="text" [(ngModel)]="task.Note" placeholder="note" id="note" name='note'/>
         <input type="text" [(ngModel)]="task.status" placeholder="status" id="status" name='status'/>
-        <p-calendar dateFormat="dd/mm/yy" [(ngModel)]="task.deadLine" name="deadLine"></p-calendar>
+        <p-calendar dateFormat="dd/mm/yy" [(ngModel)]="task.DeadLine" name="DeadLine"></p-calendar>
         <input type="text" [(ngModel)]="task.id" placeholder="id" id="id" name='id'/>
         <button >mettre tache à jour</button>
       </form>

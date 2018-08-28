@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from '../Task';
+import { Tasks } from '../Tasks';
 import { TaskServiceService } from '../task-service.service';
+import { Users } from '../Users';
 
 @Component({
   selector: 'app-todolist',
@@ -9,14 +10,17 @@ import { TaskServiceService } from '../task-service.service';
 })
 export class TodolistComponent implements OnInit {
 
-  tasks:Array<Task>;
+  tasks:any;
+  user: Users;
   constructor(private taskServe:TaskServiceService){}
 
   ngOnInit() {
-    this.taskServe.getTask().subscribe (
-      listTask=> {this.tasks = listTask; //console.log(this.tasks);
-    }
-    );
+    //console.log('jhgfdsq'+this.user.ID);
+    
+    this.tasks = this.taskServe.getTask().subscribe(tasks => {
+      this.tasks = tasks as Tasks[]
+    });
+  
   }
 
 }
