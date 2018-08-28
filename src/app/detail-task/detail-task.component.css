@@ -1,3 +1,23 @@
 div{
     border: 1px solid black;
+    width: 30%;
+    margin: 10px 0;
+}
+form, div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form button{
+    width: 50%;
+    margin: 5px 0;
+}
+
+#DeadLine{
+    width: 25%;
+}
+
+#id, #ID{
+    display: none;
 }

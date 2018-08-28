@@ -3,11 +3,11 @@
     <p>creation : {{task.CreateDate}}</p>
   <p>{{task.Note}}</p>
   <p>DeadLine : {{task.DeadLine}}</p>
-  <form (ngSubmit)="onSubmitDelete()" class="ml-5 d-flex flex-column align-items-center">
+  <form (ngSubmit)="onSubmitDelete()" >
       <input type="text" [(ngModel)]="task.ID" placeholder="id" id="id" name='id'/>
       <button>effacer</button>
     </form>
-    <form (ngSubmit)="onSubmitUpdate()" class="ml-5 d-flex flex-column align-items-center">
+    <form (ngSubmit)="onSubmitUpdate()" >
         <input type="text" [(ngModel)]="task.Note" placeholder="Note" id="Note" name='Note'/>
         <input type="text" [(ngModel)]="task.TaskState" placeholder="status" id="TaskState" name='TaskState'/>
         <p-calendar dateFormat="yy-mm-dd" [(ngModel)]="Deadline" name="DeadLine"></p-calendar>

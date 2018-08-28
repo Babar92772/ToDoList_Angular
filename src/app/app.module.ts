@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import {CalendarModule} from 'primeng/calendar';
-  
+import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 //import Perso
 import { DetailTaskComponent } from './detail-task/detail-task.component';
 import { AddTaskComponent } from './add-task/add-task.component';
@@ -34,7 +34,9 @@ const routes: Routes=[
     FormsModule,
     HttpClientModule,
     CalendarModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule,
+    NgbPaginationModule, NgbAlertModule
   ],
   providers: [FormBuilder, TaskServiceService, UserService],
   bootstrap: [AppComponent]
