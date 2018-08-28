@@ -15,7 +15,8 @@ export class TodolistComponent implements OnInit {
   constructor(private taskServe:TaskServiceService){}
 
   ngOnInit() {
-    //console.log('jhgfdsq'+this.user.ID);    
+    //console.log('jhgfdsq'+this.user.ID);
+    
     this.taskServe.getTask().subscribe(tasks => {
       this.tasks = tasks as Array<Tasks>
     });

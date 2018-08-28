@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Tasks } from './Tasks';
-//import { TASK } from './mock_task';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { TodolistComponent } from './todolist/todolist.component';
+import { HttpHeaders } from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class TaskServiceService {
   task : Tasks
+  taskJson : string;
   url = 'https://todolistwebapi20180823030718.azurewebsites.net/api/TaskApi';
   constructor(private http: HttpClient) { 
     //this.task = TASK;
@@ -21,16 +27,15 @@ export class TaskServiceService {
     //return of(this.task);
   }
   
-  addTask(Note, deadLine) {
+  addTask(Note, deadLine){
     this.task = new Tasks();
     this.task.Note = Note;
     this.task.CreateDate = new Date();
     this.task.TaskState = "todo";
     this.task.DeadLine = deadLine;
-    this.http.post(this.url+'/ADD/',this.task);
-    
-    // this.task.push(task);
-    console.log("dans le service on add tadammmm "+this.task.DeadLine);
+    this.taskJson = JSON.stringify(this.task); 
+    console.log(this.taskJson);    
+    return this.http.post(this.url+'/ADD/',{task: this.taskJson}, httpOptions).subscribe()  ;
   }
   
   deleteTask(id:number) {
