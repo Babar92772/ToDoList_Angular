@@ -16,6 +16,7 @@ const httpOptions = {
 export class TaskServiceService {
   task : Tasks
   taskJson : string;
+  update : any;
   url = 'https://todolistwebapi20180823030718.azurewebsites.net/api/TaskApi';
   constructor(private http: HttpClient) { 
     //this.task = TASK;
@@ -59,10 +60,15 @@ export class TaskServiceService {
     // //this.task = this.task.slice(id,1); 
   }
   
-  updateTask( id:number, note:string, status:string){
-    console.log(this.task[id-1]);
+  updateTask( id:number, note:string, status:string, deadLine:string){
+    this.task = new Tasks();
+    this.task.ID = id;
+    this.task.Note = note;
+    this.task.TaskState = status;
+    this.task.DeadLine = new Date(deadLine);
+    console.log(JSON.stringify(this.task));
+    console.log(this.url+'/EDIT/'+JSON.stringify(this.task),httpOptions);
     
-    this.task[id-1].TaskState = status;
-    this.task[id-1].Note = note;
+    return this.http.put(this.url+'/EDIT/%7Btask%7D', JSON.stringify(this.task), httpOptions).subscribe();
   }
 }

@@ -35,7 +35,7 @@ export class DetailTaskComponent implements OnInit {
     console.log("update");
     console.log(this.task.ID);
     this.task.DeadLine = new Date(this.Deadline);
-    this.service.updateTask(this.task.ID, this.task.Note, this.task.TaskState);
+    this.service.updateTask(this.task.ID, this.task.Note, this.task.TaskState, this.Deadline);
   }
 
 }
