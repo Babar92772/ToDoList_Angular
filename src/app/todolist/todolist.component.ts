@@ -9,13 +9,13 @@ import { Users } from '../Users';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent implements OnInit {
-
+  
   tasks:Array<Tasks>;
   user: Users;
   constructor(private taskServe:TaskServiceService){}
-
+  
   ngOnInit() {
-    //console.log('jhgfdsq'+this.user.ID);
+    //console.log('id : '+this.user.ID);
     
     this.taskServe.getTask().subscribe(tasks => {
       this.tasks = tasks as Array<Tasks>

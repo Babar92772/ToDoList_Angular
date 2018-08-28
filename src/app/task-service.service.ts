@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { TodolistComponent } from './todolist/todolist.component';
 import { HttpHeaders } from '@angular/common/http';
+import { utf8Encode } from '@angular/compiler/src/util';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -14,7 +15,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TaskServiceService {
-  task : Tasks
+  task : Tasks;
   taskJson : string;
   update : any;
   url = 'https://todolistwebapi20180823030718.azurewebsites.net/api/TaskApi';
@@ -29,14 +30,19 @@ export class TaskServiceService {
   }
   
   addTask(Note, deadLine){
+    // , ID){
     this.task = new Tasks();
     this.task.Note = Note;
     this.task.CreateDate = new Date();
     this.task.TaskState = "todo";
     this.task.DeadLine = deadLine;
-    this.taskJson = JSON.stringify(this.task); 
-    console.log(this.taskJson);    
-    return this.http.post(this.url+'/ADD/',{task: this.taskJson}, httpOptions).subscribe()  ;
+    this.task.IDUserCreator = 14786;
+
+   // this.taskJson = JSON.stringify(this.task); 
+    //console.log('id user :' + this.task.IDUserCreator);    
+    console.log(this.url+'/ADD/%7Btask%7D',this.task);
+    
+    return this.http.post(this.url+'/ADD/%7Btask%7D', this.task).subscribe()  ;
   }
   
   deleteTask(id:number) {

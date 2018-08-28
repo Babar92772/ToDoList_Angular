@@ -1,5 +1,6 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { Tasks } from '../Tasks';
+import { Users } from '../Users';
 import { FormsModule, FormBuilder, Validators } from '@angular/forms';
 import { TaskServiceService } from '../task-service.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
+  //@Input() user : Users;
   task:Tasks;
   Note: String;
   DeadLine: String;
@@ -21,12 +23,14 @@ export class AddTaskComponent implements OnInit {
   }
 
   ngOnInit() {
+    //console.log(this.user.ID);
   }
 
   onSubmit(){
-    console.log('on finit le add dans le componnent'+this.Note+this.DeadLine);
+    //console.log('on finit le add dans le componnent' + this.Note + ' / ' + this.DeadLine+' / ' + this.user.ID);
 
     this.service.addTask(this.Note, this.DeadLine);
+    //  , this.user.ID);
     
     this.task = new Tasks();
   }
