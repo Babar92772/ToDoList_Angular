@@ -29,7 +29,7 @@ export class TaskServiceService {
     this.http.post(this.url+'/ADD/',this.task);
 
    // this.task.push(task);
-    console.log("dans le service on add tadammmm "+Note);
+    console.log("dans le service on add tadammmm "+this.task.DeadLine);
   }
 
   // deleteTask(id:number) {
