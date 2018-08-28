@@ -3,6 +3,6 @@
 <ul class="bg-primary">
   <li *ngFor="let t of tasks">
   
-    <app-detail-task [task]="t"></app-detail-task>
+    <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
   </li>
 </ul>

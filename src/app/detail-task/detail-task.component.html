@@ -1,8 +1,8 @@
 <div>
     <p>{{task.TaskState}}</p>
-    <p>creation :{{task.CreateDate}}</p>
+    <p>creation : {{task.CreateDate}}</p>
   <p>{{task.Note}}</p>
-  <p>{{task.DeadLine}}</p>
+  <p>DeadLine : {{task.DeadLine}}</p>
   <form (ngSubmit)="onSubmitDelete()" class="ml-5 d-flex flex-column align-items-center">
       <input type="text" [(ngModel)]="task.ID" placeholder="id" id="id" name='id'/>
       <button>effacer</button>

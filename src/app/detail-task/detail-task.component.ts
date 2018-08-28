@@ -1,28 +1,32 @@
 import { Component, OnInit, Input } from '@angular/core';
 //import perso
 import{Tasks} from '../Tasks';
+import { Router } from 'node_modules/@angular/router/fesm5/router.js';
 import { TaskServiceService } from '../task-service.service';
+
 @Component({
   selector: 'app-detail-task',
   templateUrl: './detail-task.component.html',
   styleUrls: ['./detail-task.component.css']
 })
+
 export class DetailTaskComponent implements OnInit {
   @Input() task : Tasks;
-  constructor(private service : TaskServiceService) {
+  @Input() tasks : Array<Tasks>;
+  constructor(private service : TaskServiceService, private router : Router) {
     this.task = new Tasks();
    }
 
   ngOnInit() {
   }
 
-  // onSubmitDelete(){
-  //   console.log(this.task.ID);
-    
-  //   this.service.deleteTask(this.task.ID);
-  //   console.log('on finit le delete dans le componnent');
-    
-  // }
+  onSubmitDelete(){
+    console.log('On a la tache :' + this.task.ID);
+    this.service.deleteTask(this.task.ID);
+    this.tasks.splice(this.tasks.findIndex(t => this.task.ID === t.ID), 1);
+    console.log('on finit le delete dans le componnent');
+    this.router.navigate(['listTasks']);    
+  }
 
   onSubmitUpdate(){
     console.log("update");

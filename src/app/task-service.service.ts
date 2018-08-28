@@ -4,6 +4,7 @@ import { Tasks } from './Tasks';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { TodolistComponent } from './todolist/todolist.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +20,7 @@ export class TaskServiceService {
     return this.http.get(this.url+'/All');
     //return of(this.task);
   }
-
+  
   addTask(Note, deadLine) {
     this.task = new Tasks();
     this.task.Note = Note;
@@ -27,29 +28,32 @@ export class TaskServiceService {
     this.task.TaskState = "todo";
     this.task.DeadLine = deadLine;
     this.http.post(this.url+'/ADD/',this.task);
-
-   // this.task.push(task);
+    
+    // this.task.push(task);
     console.log("dans le service on add tadammmm "+this.task.DeadLine);
   }
-
-  // deleteTask(id:number) {
-  //   console.log(id);
-  //   // const uri = 'http://localhost:4000/note' + id;
-
-  //   // return this
-  //   //     .http.delete(uri).subscribe;
-  //   const index: number = this.task.indexOf(this.task[id]);
-  //   console.log(index);
+  
+  deleteTask(id:number) {
+    console.log('On supprime la tache ' + id);
+    this.http.delete(this.url + '/DEL/' + id).subscribe();
     
-  //   if (index !== -1) {
-  //     console.log(this.task.splice(index, index+1));
-      
-  //       //this.task.splice(index-1, 1);
-  //   }        
-  //   //console.log(this.task.slice(id-1,id));
-  //   //this.task = this.task.slice(id,1); 
-  // }
-
+    // console.log(id);
+    // // const uri = 'http://localhost:4000/note' + id;
+    
+    // // return this
+    // //     .http.delete(uri).subscribe;
+    // const index: number = this.task.indexOf(this.task[id]);
+    // console.log(index);
+    
+    // if (index !== -1) {
+    //   console.log(this.task.splice(index, index+1));
+    
+    //     //this.task.splice(index-1, 1);
+    // }        
+    // //console.log(this.task.slice(id-1,id));
+    // //this.task = this.task.slice(id,1); 
+  }
+  
   updateTask( id:number, note:string, status:string){
     console.log(this.task[id-1]);
     
