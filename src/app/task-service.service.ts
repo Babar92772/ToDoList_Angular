@@ -36,7 +36,7 @@ export class TaskServiceService {
     this.task.CreateDate = new Date();
     this.task.TaskState = "todo";
     this.task.DeadLine = deadLine;
-    this.task.IDUserCreator = 14786;
+    this.task.IDUserCreator = parseInt(localStorage.getItem('IdUserSession'));
 
    // this.taskJson = JSON.stringify(this.task); 
     //console.log('id user :' + this.task.IDUserCreator);    

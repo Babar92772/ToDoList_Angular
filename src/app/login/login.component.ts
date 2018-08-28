@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
         if( this.user.ID != null){
           console.log('valide');   
           this.router.navigate(['listTasks']);
+          localStorage.setItem('IdUserSession', this.user.ID.toString())
         }
         else{    
           console.log("merde2");
