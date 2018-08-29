@@ -1,13 +1,13 @@
-div{
+.Encadrement{
     border: 1px solid black;
-    margin: 2px 0;
+    margin: 5px 0;
 }
-form, div.Encadrement{
+form, .Encadrement{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-div.ligne{
+.ligne{
     display: flex;
     flex-direction: row;
     align-items: center;
