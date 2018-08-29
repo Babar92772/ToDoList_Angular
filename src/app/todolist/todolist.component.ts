@@ -12,13 +12,23 @@ export class TodolistComponent implements OnInit {
   
   tasks:Array<Tasks>;
   user: Users;
+  todo: Array<Tasks>;
+  progress:Array<Tasks>;
+  done:Array<Tasks>;
   constructor(private taskServe:TaskServiceService){}
   
   ngOnInit() {
     console.log('id : '+ localStorage.getItem('IdUserSession'));
     
-    this.taskServe.getTask().subscribe(tasks => {
-      this.tasks = tasks as Array<Tasks>
+    var info = this.taskServe.getTask();
+    info[0].subscribe(tasks => {
+      this.todo = tasks as Array<Tasks>
+    });
+    info[1].subscribe(tasks => {
+      this.progress = tasks as Array<Tasks>
+    });
+    info[2].subscribe(tasks => {
+      this.done = tasks as Array<Tasks>
     });
   }
 }

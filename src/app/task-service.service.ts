@@ -24,9 +24,11 @@ export class TaskServiceService {
     
   }
   getTask(){
-    console.log(this.http.get(this.url+'/Todo/'+localStorage.getItem('IdUserSession')).subscribe());
-    return this.http.get(this.url+'/All');
-    //return of(this.task);
+    var todo = this.http.get(this.url+'/Todo/'+localStorage.getItem('IdUserSession'));
+    var progress = this.http.get(this.url+'/Progress/'+localStorage.getItem('IdUserSession'));
+    var done = this.http.get(this.url+'/Done/'+localStorage.getItem('IdUserSession'));
+    var info = [todo, progress, done];
+    return info;
   }
   
   addTask(Note, deadLine){
