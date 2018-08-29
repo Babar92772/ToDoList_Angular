@@ -1,24 +1,31 @@
-<div>
-    <p>{{task.TaskState}}</p>
-    <p>creation : {{task.CreateDate}}</p>
+<div class="Encadrement">
+  <p>Date creation : {{task.CreateDate}}</p>
   <p>{{task.Note}}</p>
   <p>DeadLine : {{task.DeadLine}}</p>
   <form (ngSubmit)="onSubmitDelete()" >
-      <input type="text" [(ngModel)]="task.ID" placeholder="id" id="id" name='id'/>
-      <button>effacer</button>
-    </form>
+    <input type="text" [(ngModel)]="task.ID" placeholder="id" id="id" name='id'/>
+    <button>Delete Task</button>
+  </form>
+  <div class="Encadrement">
+    <p>Edit Task</p>
     <form (ngSubmit)="onSubmitUpdate()" >
-        <input type="text" [(ngModel)]="task.Note" placeholder="Note" id="Note" name='Note'/>
-        <select [(ngModel)]="task.TaskState" placeholder="status" id="TaskState" name='TaskState'>
-          <option value="todo">todo</option>
-          <option value="progress">progress</option>
-          <option value="done">done</option>
-        </select>
+      <input type="text" [(ngModel)]="task.Note" placeholder="Note" id="Note" name='Note'/>
+      <select [(ngModel)]="task.TaskState" placeholder="status" id="TaskState" name='TaskState'>
+        <option value="todo">todo</option>
+        <option value="progress">progress</option>
+        <option value="done">done</option>
+      </select>
+      <div class="ligne">
+        <p>DeadLine : </p>
         <p-calendar dateFormat="yy-mm-dd" [(ngModel)]="Deadline" name="DeadLine" id="Deadline"></p-calendar>
-        <input type="text" [(ngModel)]="task.ID" placeholder="id" id="ID" name='ID'/>
-        <button >mettre tache à jour</button>
-      </form>
+      </div>
+      
+      <input type="text" [(ngModel)]="task.ID" placeholder="id" id="ID" name='ID'/>
+      <button>Update</button>
+    </form>
+  </div>
 </div>
+
 
 
 

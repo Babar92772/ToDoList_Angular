@@ -3,22 +3,25 @@
 <!-- [user]= "user" -->
 <div>
   <ul >
+    <h3>To Do</h3>
     <li *ngFor="let t of todo">
-    
+      
       <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
     </li>
   </ul>
   
   <ul >
+      <h3>In Progress</h3>
     <li *ngFor="let t of progress">
-    
+      
       <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
     </li>
   </ul>
   
   <ul >
+      <h3>Done</h3>
     <li *ngFor="let t of done">
-    
+      
       <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
     </li>
   </ul>

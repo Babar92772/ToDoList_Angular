@@ -1,11 +1,14 @@
 li{
     list-style: none;
 }
+
 ul{
     padding: 0;
     margin: 0;
     width: 25%;
+    border: 1px solid black;
 }
+
 div{
     display: flex;
     flex-direction: row;
