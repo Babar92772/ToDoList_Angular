@@ -24,7 +24,7 @@ export class TaskServiceService {
     
   }
   getTask(){
-    console.log(this.http.get(this.url+'/All'));
+    console.log(this.http.get(this.url+'/Todo/'+localStorage.getItem('IdUserSession')).subscribe());
     return this.http.get(this.url+'/All');
     //return of(this.task);
   }

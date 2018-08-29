@@ -1,9 +1,26 @@
 <h2>page todolist</h2>
 <app-add-task ></app-add-task>
 <!-- [user]= "user" -->
-<ul class="bg-primary">
-  <li *ngFor="let t of tasks">
+<div>
+  <ul >
+    <li *ngFor="let t of tasks">
+    
+      <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
+    </li>
+  </ul>
   
-    <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
-  </li>
-</ul>
+  <ul >
+    <li *ngFor="let t of tasks">
+    
+      <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
+    </li>
+  </ul>
+  
+  <ul >
+    <li *ngFor="let t of tasks">
+    
+      <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
+    </li>
+  </ul>
+</div>
+

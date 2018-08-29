@@ -1,6 +1,5 @@
 div{
     border: 1px solid black;
-    width: 30%;
     margin: 10px 0;
 }
 form, div{
@@ -9,9 +8,15 @@ form, div{
     align-items: center;
 }
 
-form input, form button{
+
+
+form input{
     width: 50%;
     margin: 5px 0;
+}
+
+form button{
+    margin : 5px 0;
 }
 
 #DeadLine{

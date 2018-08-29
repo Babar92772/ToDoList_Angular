@@ -10,7 +10,7 @@
     <form (ngSubmit)="onSubmitUpdate()" >
         <input type="text" [(ngModel)]="task.Note" placeholder="Note" id="Note" name='Note'/>
         <input type="text" [(ngModel)]="task.TaskState" placeholder="status" id="TaskState" name='TaskState'/>
-        <p-calendar dateFormat="yy-mm-dd" [(ngModel)]="Deadline" name="DeadLine"></p-calendar>
+        <p-calendar dateFormat="yy-mm-dd" [(ngModel)]="Deadline" name="DeadLine" id="Deadline"></p-calendar>
         <input type="text" [(ngModel)]="task.ID" placeholder="id" id="ID" name='ID'/>
         <button >mettre tache à jour</button>
       </form>

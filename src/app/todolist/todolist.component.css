@@ -1,3 +1,14 @@
 li{
     list-style: none;
 }
+ul{
+    padding: 0;
+    margin: 0;
+    width: 25%;
+}
+div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

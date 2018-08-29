@@ -1,0 +1,15 @@
+H1{
+    text-align: center
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    border: 2px solid red;
+}
+
+input{
+    margin: 5px 0;
+}
