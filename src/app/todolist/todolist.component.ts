@@ -15,6 +15,7 @@ export class TodolistComponent implements OnInit {
   todo: Array<Tasks>;
   progress:Array<Tasks>;
   done:Array<Tasks>;
+
   constructor(private taskServe:TaskServiceService){}
   
   ngOnInit() {
