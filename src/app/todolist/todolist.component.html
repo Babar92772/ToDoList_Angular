@@ -1,5 +1,11 @@
-<h2>page todolist</h2>
-<app-add-task ></app-add-task>
+
+<div class="add">
+  <h2>Add Task</h2>
+  <app-add-task ></app-add-task>
+  <p></p>
+</div>
+
+
 <!-- [user]= "user" -->
 <div>
   <ul >
@@ -11,7 +17,7 @@
   </ul>
   
   <ul >
-      <h3>In Progress</h3>
+    <h3>In Progress</h3>
     <li *ngFor="let t of progress">
       
       <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>
@@ -19,7 +25,7 @@
   </ul>
   
   <ul >
-      <h3>Done</h3>
+    <h3>Done</h3>
     <li *ngFor="let t of done">
       
       <app-detail-task [task]="t" [tasks]= "tasks"></app-detail-task>

@@ -1,12 +1,19 @@
 li{
+   
+    width: 95%;
     list-style: none;
+    /* padding: -10px -10px -10px -10px; */
 }
 
 ul{
     padding: 0;
     margin: 0;
-    width: 25%;
-    border: 1px solid black;
+    width: 32%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    align-items: center;
 }
 
 div{
@@ -14,4 +21,25 @@ div{
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
+    margin :0px ;
+    padding :0px ;
 }
+
+.add{
+    display:flex;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 0px 0px 10px 0px;  
+    padding :0px ;
+    text-align: center;
+    align-items: center;
+    /* height: 200px; */
+}
+
+/* h3{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+     text-align: center; 
+    
+} */

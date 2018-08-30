@@ -1,7 +1,9 @@
-
-
-<form (ngSubmit)="onSubmit()" class="ml-5 d-flex flex-column align-items-center">
-    <input type="text" [(ngModel)]="Note" placeholder="note" id="Note" name='Note'/>
-    <p-calendar type="text" dateFormat="dd/mm/yy" [(ngModel)]="DeadLine" name="DeadLine" id="DeadLine"></p-calendar>
-    <button >créer tâche</button>
+  <form (ngSubmit)="onSubmit()" >
+    <input  type="text" [(ngModel)]="Note" placeholder="note" id="Note" name='Note'/>
+    
+    <h4>DeadLine :
+      <p-calendar type="text" dateFormat="dd/mm/yy" [(ngModel)]="DeadLine" name="DeadLine" id="DeadLine"></p-calendar>
+    </h4>
+    
+    <button class="btn">Add</button>
   </form>
