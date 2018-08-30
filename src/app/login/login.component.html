@@ -7,3 +7,13 @@
   <input type="text" [(ngModel)]="Pwd" placeholder="Pwd" id="Pwd"  name='Pwd'/>
   <input type="submit"/>
 </form>
+<button (click)="displayNewUser()">Nouvel utilisateur</button>
+<form (ngSubmit)="onSubmitSignUp()" *ngIf="newUser">
+  <label for="">pseudo</label>
+  <input type="text" name="pseudo" id="pseudo"/>
+  <label for="">mail</label>
+  <input type="text" name="mail" id="mail"/>
+  <label for="">mot de pass</label>
+  <input type="text" name="pwd" id="pwd"/>
+  <input type="submit" value="creer utilisateur"/>
+</form>

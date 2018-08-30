@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   userForm:FormsModule;
   Pseudo: string;
   Pwd : string;
+  newUser:boolean = false;
   constructor(private service : UserService, private fb:FormBuilder, private router : Router) { 
     this.user = new Users();
     this.Pseudo = '';
@@ -28,6 +29,17 @@ export class LoginComponent implements OnInit {
     this.Pseudo = '';
     this.Pwd = '';
   }
+
+  displayNewUser(){
+    this.newUser = true;
+  }
+
+  onSubmitSignUp(){
+    alert("zut");
+    this.newUser = false;
+  }
+
+
 
   onSubmitLogin(){
     
