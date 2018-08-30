@@ -6,10 +6,11 @@
 #add{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
+    justify-content: start;
     align-items: center;
     margin :0px ;
     padding :0px ;
+    background-color: yellow;
     width:100%; 
 }
 

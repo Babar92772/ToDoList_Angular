@@ -4,4 +4,16 @@ li{
 
 div{
     background-color:rgba(231, 231, 3, 0.5);
+    height: 100px;
+}
+
+h1{
+    text-align: center
+}
+
+img{
+    position: absolute;
+    right: 2%;
+    width: 5%;
+    top : 3%;
 }

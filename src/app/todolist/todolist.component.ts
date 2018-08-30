@@ -15,7 +15,7 @@ export class TodolistComponent implements OnInit {
   todo: Array<Tasks>;
   progress:Array<Tasks>;
   done:Array<Tasks>;
-  
+  isSpawnAdd: boolean = false;
   constructor(private taskServe:TaskServiceService){}
   
   ngOnInit() {
@@ -31,6 +31,12 @@ export class TodolistComponent implements OnInit {
     info[2].subscribe(tasks => {
       this.done = tasks as Array<Tasks>
     });
+  }
+
+  spawnAdd(value:boolean){
+    console.log("merde");
+    alert("merde");
+    this.isSpawnAdd = value;
   }
   
   UpdateInit(){

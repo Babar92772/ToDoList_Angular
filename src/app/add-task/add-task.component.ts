@@ -18,6 +18,7 @@ export class AddTaskComponent implements OnInit {
   Note: String;
   DeadLine: String;
   taskForm:FormsModule;
+  isSpawnAdd: boolean;
   constructor(private service : TaskServiceService, private fb:FormBuilder, private component : TodolistComponent) { 
     this.task = new Tasks();
     this.Note ="";

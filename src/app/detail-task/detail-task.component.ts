@@ -26,7 +26,7 @@ export class DetailTaskComponent implements OnInit {
   }
 
   spawn(value:boolean){
-      this.isSpawn = true;
+      this.isSpawn = value;
   }
 
   onSubmitDelete(){
