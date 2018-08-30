@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tasks } from '../Tasks';
 import { TaskServiceService } from '../task-service.service';
 import { Users } from '../Users';
-
+import { Router } from 'node_modules/@angular/router/fesm5/router.js';
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
@@ -16,7 +16,7 @@ export class TodolistComponent implements OnInit {
   progress:Array<Tasks>;
   done:Array<Tasks>;
   isSpawnAdd: boolean = false;
-  constructor(private taskServe:TaskServiceService){}
+  constructor(private taskServe:TaskServiceService, private router : Router){}
   
   ngOnInit() {
     console.log('id : '+ localStorage.getItem('IdUserSession'));
@@ -38,6 +38,10 @@ export class TodolistComponent implements OnInit {
   }
   spawnAddDel(value:boolean){
     this.isSpawnAdd = value;
+  }
+  onSubmitDeco(){
+    localStorage.setItem('IdUserSession', null);
+    this.router.navigate(['']);
   }
   UpdateInit(){
     this.todo = new Array<Tasks>();

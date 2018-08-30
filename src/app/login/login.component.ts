@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitSignUp(){
-    alert("zut");
     this.newUser = false;
   }
 
