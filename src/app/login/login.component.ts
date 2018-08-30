@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   Pseudo: string;
   Pwd : string;
   newUser:boolean = false;
+  signUp: boolean = false;
   Usernew:Users;
   pseudo : string;
   mail : string;
@@ -37,13 +38,19 @@ export class LoginComponent implements OnInit {
   
   displayNewUser(){
     this.newUser = true;
+    this.signUp = false;
+  }
+
+  displaySignUp(){
+    this.signUp = true;
+    this.newUser = false;
   }
   
   onSubmitSignUp(){
     this.Usernew.Pseudo = this.pseudo;
     this.Usernew.Mail = this.mail;
     this.Usernew.Pwd = this.pwd;
-    this.service.SignUp(this.Usernew).subscribe(s => this.newUser = false);
+    this.service.SignUp(this.Usernew).subscribe(s => this.newUser = false, s=> this.signUp = false);
   }
   
   

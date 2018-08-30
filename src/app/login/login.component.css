@@ -7,9 +7,14 @@ form{
     align-items: center;
     width: 50%;
     margin: auto;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 29, 126);
 }
 
 input{
     margin: 5px 0;
+}
+
+.sign{
+    display: flex;
+    justify-content: space-around;
 }
