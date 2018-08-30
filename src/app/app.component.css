@@ -3,7 +3,7 @@ li{
 }
 
 div{
-    background-color:rgba(231, 231, 3, 0.5);
+    border: 2px solid black;
     height: 100px;
 }
 
