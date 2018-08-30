@@ -10,11 +10,8 @@
 </form>
 
 <form (ngSubmit)="onSubmitSignUp()" *ngIf="newUser">
-  <label for="">Pseudo</label>
-  <input type="text" [(ngModel)]="pseudo" name="pseudo" id="pseudo"/>
-  <label for="">Mail</label>
-  <input type="text" [(ngModel)]="mail" name="mail" id="mail"/>
-  <label for="">Password</label>
-  <input type="password" [(ngModel)]="pwd" name="pwd" id="pwd"/>
+  <input type="text" placeholder="Pseudo" [(ngModel)]="pseudo" name="pseudo" id="pseudo"/>
+  <input type="text" placeholder="Mail" [(ngModel)]="mail" name="mail" id="mail"/>
+  <input type="password" placeholder="Password" [(ngModel)]="pwd" name="pwd" id="pwd"/>
   <button>Sign Up</button>
 </form>

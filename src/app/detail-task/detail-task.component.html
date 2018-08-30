@@ -1,9 +1,10 @@
-<div class="Encadrement"> <h5>Creation Date : {{task.CreateDate}}</h5>
-  <h5>{{task.Note}}</h5>
-  
-  <h5>DeadLine : {{task.DeadLine}}</h5>
+<div class="Encadrement"> 
+  <h5>Creation Date : {{CreateDate}}</h5>
+  <h5>{{task.Note}}</h5>  
+  <h5>DeadLine : {{DeadLine}}</h5>
+
   <form (ngSubmit)="onSubmitDelete()" >
-    <input type="text" [(ngModel)]="task.ID" placeholder="id" id="id" name='id'/>
+    <input type="text" [(ngModel)]="task.ID" placeholder="ID" id="id" name='id'/>
     <button class="btn">Delete Task</button>
   </form>
   <button (click)="spawn(true)">Edit Task</button>
@@ -15,7 +16,7 @@
       <input type="text" [(ngModel)]="task.Note" placeholder="Note" id="Note" name='Note'/>
       
       <h5>Status : 
-        <select [(ngModel)]="task.TaskState" placeholder="status" id="TaskState" name='TaskState'>
+        <select [(ngModel)]="task.TaskState" placeholder="Status" id="TaskState" name='TaskState'>
           <option value="todo">todo</option>
           <option value="progress">progress</option>
           <option value="done">done</option>

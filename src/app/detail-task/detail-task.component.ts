@@ -15,6 +15,7 @@ export class DetailTaskComponent implements OnInit {
   @Input() task : Tasks;
   @Input() tasks : Array<Tasks>;
   Deadline : string;
+  CreateDate : string;
   isSpawn: boolean = false;
   constructor(private service : TaskServiceService, private router : Router, private component : TodolistComponent) {
     this.task = new Tasks();
@@ -23,12 +24,17 @@ export class DetailTaskComponent implements OnInit {
   ngOnInit() {
     this.Deadline = this.task.DeadLine.toString();
     this.Deadline = this.Deadline.substr(0, 10);
+    console.log(this.Deadline);
+    this.CreateDate = this.task.CreateDate.toString();
+    this.CreateDate = this.CreateDate.substr(0, 10);
+    console.log(this.CreateDate);
+    
   }
-
+  
   spawn(value:boolean){
-      this.isSpawn = value;
+    this.isSpawn = value;
   }
-
+  
   onSubmitDelete(){
     console.log('On a la tache :' + this.task.ID);
     this.service.deleteTask(this.task.ID).subscribe(s => this.component.UpdateInit());
