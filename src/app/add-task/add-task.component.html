@@ -1,5 +1,5 @@
-  <form (ngSubmit)="onSubmit()" >
-    <input  type="text" [(ngModel)]="Note" placeholder="note" id="Note" name='Note'/>
+  <form id="add" (ngSubmit)="onSubmit()" >
+    <textarea [(ngModel)]="Note" placeholder="note" id="Note" name='Note' cols="30" rows="10"></textarea>
     
     <h4>DeadLine :
       <p-calendar type="text" dateFormat="dd/mm/yy" [(ngModel)]="DeadLine" name="DeadLine" id="DeadLine"></p-calendar>

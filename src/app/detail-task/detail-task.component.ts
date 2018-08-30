@@ -14,6 +14,7 @@ export class DetailTaskComponent implements OnInit {
   @Input() task : Tasks;
   @Input() tasks : Array<Tasks>;
   Deadline : string;
+  isSpawn: boolean = false;
   constructor(private service : TaskServiceService, private router : Router) {
     this.task = new Tasks();
    }
@@ -21,6 +22,10 @@ export class DetailTaskComponent implements OnInit {
   ngOnInit() {
       this.Deadline = this.task.DeadLine.toString();
       this.Deadline = this.Deadline.substr(0, 10);
+  }
+
+  spawn(value:boolean){
+      this.isSpawn = true;
   }
 
   onSubmitDelete(){
@@ -36,6 +41,7 @@ export class DetailTaskComponent implements OnInit {
     console.log(this.task.ID);
     this.task.DeadLine = new Date(this.Deadline);
     this.service.updateTask(this.task.ID, this.task.Note, this.task.TaskState, this.Deadline);
+    this.isSpawn = false;
   }
 
 }

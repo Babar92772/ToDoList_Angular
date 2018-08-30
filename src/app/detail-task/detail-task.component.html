@@ -6,10 +6,12 @@
     <input type="text" [(ngModel)]="task.ID" placeholder="id" id="id" name='id'/>
     <button class="btn">Delete Task</button>
   </form>
-  <div class="Encadrement">
-    <h5>Edit Task</h5>
+  <button (click)="spawn(true)">Edit Task</button>
+  <div class="Encadrement enfant">
+
     
-    <form (ngSubmit)="onSubmitUpdate()" >
+    
+    <form (ngSubmit)="onSubmitUpdate()" class="update" *ngIf="isSpawn">
       <input type="text" [(ngModel)]="task.Note" placeholder="Note" id="Note" name='Note'/>
       
       <h5>Status : 

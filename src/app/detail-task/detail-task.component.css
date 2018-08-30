@@ -24,6 +24,13 @@ h5{
     margin: 10px 10px 10px 10px;
 }
 
+.enfant{
+    background-color: rgba(128, 128, 128, 0.507); 
+}
+/* .enfant form{
+    display: none;
+} */
+
 /*form, div.Encadrement{
     display: flex;
     flex-direction: column;
