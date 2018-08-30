@@ -49,32 +49,5 @@ export class LoginComponent implements OnInit {
       
       console.log("zut");
     }
-
-  //   var allUsers = this.service.login();
-  //   console.log(allUsers);
-  //   var test = false;
-  //     allUsers.forEach(function (value) {
-  //       value.forEach(function (entree) {
-  //         console.log(entree.Pwd);
-  //           if(entree.Pwd !=="undefined" && entree.Pseudo !=="undefined"){
-  //             console.log(entree.Pseudo, entree.Pwd);
-  //             if(entree.Pwd == Pwd && entree.Pseudo == Pseudo){
-  //               console.log('entrée');
-  //                location.replace(`http://localhost:4200/listTasks`);
-  //                test = true;
-  //             }
-  //           }
-          
-          
-          
-  //       });
-  //     }); 
-  //   if(!test){
-  //     alert('erreur');
-  //   }
-  //   console.log('errer');
-  //   alert('erreur');
-  // }
-
   }
 }

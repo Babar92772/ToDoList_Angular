@@ -5,6 +5,7 @@ import { FormsModule, FormBuilder, Validators } from '@angular/forms';
 import { TaskServiceService } from '../task-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from '../app.component';
+import { TodolistComponent } from '../todolist/todolist.component';
 
 @Component({
   selector: 'app-add-task',
@@ -17,22 +18,22 @@ export class AddTaskComponent implements OnInit {
   Note: String;
   DeadLine: String;
   taskForm:FormsModule;
-  constructor(private service : TaskServiceService, private fb:FormBuilder) { 
+  constructor(private service : TaskServiceService, private fb:FormBuilder, private component : TodolistComponent) { 
     this.task = new Tasks();
     this.Note ="";
   }
-
+  
   ngOnInit() {
     //console.log(this.user.ID);
   }
-
+  
   onSubmit(){
     //console.log('on finit le add dans le componnent' + this.Note + ' / ' + this.DeadLine+' / ' + this.user.ID);
-
-    this.service.addTask(this.Note, this.DeadLine);
-    //  , this.user.ID);
-    
+    this.service.addTask(this.Note, this.DeadLine).subscribe(s => this.component.UpdateInit());
+    //this.component.UpdateInit()
     this.task = new Tasks();
+    this.Note  ='';
+    this.DeadLine = '';
   }
-
+  
 }
