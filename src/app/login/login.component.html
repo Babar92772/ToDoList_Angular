@@ -1,19 +1,17 @@
-<div style="text-align:center">
-    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div>
+
   <h1>page app</h1>
 <form (ngSubmit)="onSubmitLogin()"  class="ml-5 d-flex flex-column align-items-center">
   <input type="text" [(ngModel)]="Pseudo" placeholder="Pseudo" id="Pseudo" name='Pseudo'/>
-  <input type="text" [(ngModel)]="Pwd" placeholder="Pwd" id="Pwd"  name='Pwd'/>
+  <input type="password" [(ngModel)]="Pwd" placeholder="Pwd" id="Pwd"  name='Pwd'/>
   <button>sign in</button>
 </form>
 <button (click)="displayNewUser()">sign up</button>
 <form (ngSubmit)="onSubmitSignUp()" *ngIf="newUser">
   <label for="">pseudo</label>
-  <input type="text" name="pseudo" id="pseudo"/>
+  <input type="text" [(ngModel)]="pseudo" name="pseudo" id="pseudo"/>
   <label for="">mail</label>
-  <input type="text" name="mail" id="mail"/>
+  <input type="text" [(ngModel)]="mail" name="mail" id="mail"/>
   <label for="">mot de pass</label>
-  <input type="text" name="pwd" id="pwd"/>
+  <input type="password" [(ngModel)]="pwd" name="pwd" id="pwd"/>
   <button>sign up</button>
 </form>

@@ -10,10 +10,13 @@ import { retry, catchError } from 'rxjs/operators';
 export class UserService {
   // url = 'https://todolistwebapi20180823030718.azurewebsites.net/api/UserConnexion/';
   url = 'https://todolistwebapi20180823030718.azurewebsites.net/api/UserConnexion/Connect/';
+  url2 = 'https://todolistwebapi20180823030718.azurewebsites.net/api/UserApi/ADD/%7Buser%7D}';
   user : Users;
+  
   constructor(private http: HttpClient) { 
     this.user = new Users();
   }
+
   Login(Pseudo, Pwd):Observable<Users>{
     //this.user = this.http.get(this.url+'/Connect/'+ pseudo +'/'+pwd);
     //return this.http.get<Users>(this.url+'/Connect/'+ pseudo +'/'+pwd)
@@ -24,6 +27,10 @@ export class UserService {
     
     return test;
     
+  }
+
+  SignUp(Usernew){
+    return this.http.post(this.url2, Usernew);
   }
   
 }
