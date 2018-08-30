@@ -1,13 +1,13 @@
 <div id="buttonAdd">
     <button *ngIf="!isSpawnAdd" (click)="spawnAdd(true)" >Create Task</button>
-    <button (click)="onSubmitDeco()">sign out</button>
+    <button (click)="onSubmitDeco()">Sign Out</button>
 </div>
 <div class="add" *ngIf="isSpawnAdd">
   <h2>Add Task</h2>
   <app-add-task id="app" ></app-add-task>
   <p></p>
   <div id="buttonAddDelete">
-      <button *ngIf="isSpawnAdd" (click)="spawnAddDel(false)" >Hide form</button>
+      <button *ngIf="isSpawnAdd" (click)="spawnAddDel(false)" >Hide Add</button>
   </div>
 </div>
 

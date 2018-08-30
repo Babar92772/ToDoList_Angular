@@ -1,20 +1,20 @@
 
   <div class="sign">
-      <button (click)="displayNewUser()">sign up</button>
-      <button (click)="displaySignUp()">sign in</button>
+      <button (click)="displayNewUser()">Sign Up</button>
+      <button (click)="displaySignUp()">Sign In</button>
   </div>
 <form (ngSubmit)="onSubmitLogin()" *ngIf="signUp" class="ml-5 d-flex flex-column align-items-center">
   <input type="text" [(ngModel)]="Pseudo" placeholder="Pseudo" id="Pseudo" name='Pseudo'/>
   <input type="password" [(ngModel)]="Pwd" placeholder="Pwd" id="Pwd"  name='Pwd'/>
-  <button>sign in</button>
+  <button>Sign In</button>
 </form>
 
 <form (ngSubmit)="onSubmitSignUp()" *ngIf="newUser">
-  <label for="">pseudo</label>
+  <label for="">Pseudo</label>
   <input type="text" [(ngModel)]="pseudo" name="pseudo" id="pseudo"/>
-  <label for="">mail</label>
+  <label for="">Mail</label>
   <input type="text" [(ngModel)]="mail" name="mail" id="mail"/>
-  <label for="">mot de pass</label>
+  <label for="">Password</label>
   <input type="password" [(ngModel)]="pwd" name="pwd" id="pwd"/>
-  <button>sign up</button>
+  <button>Sign Up</button>
 </form>
