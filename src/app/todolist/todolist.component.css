@@ -21,6 +21,7 @@ div{
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
+    background-color:rgba(7, 3, 231, 0.671);
     margin :0px ;
     padding :0px ;
 }

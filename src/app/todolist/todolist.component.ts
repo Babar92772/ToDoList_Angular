@@ -34,11 +34,11 @@ export class TodolistComponent implements OnInit {
   }
 
   spawnAdd(value:boolean){
-    console.log("merde");
-    alert("merde");
     this.isSpawnAdd = value;
   }
-  
+  spawnAddDel(value:boolean){
+    this.isSpawnAdd = value;
+  }
   UpdateInit(){
     this.todo = new Array<Tasks>();
     this.progress = new Array<Tasks>();

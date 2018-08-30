@@ -5,6 +5,9 @@
   <h2>Add Task</h2>
   <app-add-task id="app" ></app-add-task>
   <p></p>
+  <div id="buttonAddDelete">
+      <button *ngIf="isSpawnAdd" (click)="spawnAddDel(false)" >Hide form</button>
+  </div>
 </div>
 
 
