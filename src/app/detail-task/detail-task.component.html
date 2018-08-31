@@ -1,7 +1,7 @@
 <div class="Encadrement"> 
-  <h5>Creation Date : {{CreateDate}}</h5>
+  <h5>Creation Date : {{task.CreateDate|date:"dd/MM/yy"}}</h5>
   <h5>{{task.Note}}</h5>  
-  <h5>DeadLine : {{DeadLine}}</h5>
+  <h5>DeadLine : {{task.DeadLine|date:"dd/MM/yy"}}</h5>
 
   <form (ngSubmit)="onSubmitDelete()" >
     <input type="text" [(ngModel)]="task.ID" placeholder="ID" id="id" name='id'/>
@@ -25,7 +25,7 @@
       
       <div class="ligne">
         <h5 id="laCertif">DeadLine : 
-          <p-calendar dateFormat="yy-mm-dd" [(ngModel)]="Deadline" name="DeadLine" id="Deadline"></p-calendar>
+          <p-calendar dateFormat="dd-mm-yy" [(ngModel)]="Deadline" name="DeadLine" id="Deadline"></p-calendar>
         </h5>
         
       </div>

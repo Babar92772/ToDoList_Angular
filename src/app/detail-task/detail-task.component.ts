@@ -22,13 +22,6 @@ export class DetailTaskComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.Deadline = this.task.DeadLine.toString();
-    this.Deadline = this.Deadline.substr(0, 10);
-    console.log(this.Deadline);
-    this.CreateDate = this.task.CreateDate.toString();
-    this.CreateDate = this.CreateDate.substr(0, 10);
-    console.log(this.CreateDate);
-    
   }
   
   spawn(value:boolean){
@@ -47,7 +40,9 @@ export class DetailTaskComponent implements OnInit {
   onSubmitUpdate(){
     console.log("update");
     console.log(this.task.ID);
-    this.task.DeadLine = new Date(this.Deadline);
+    if(this.Deadline != ''){
+      this.task.DeadLine = new Date(this.Deadline);
+    }    
     this.service.updateTask(this.task.ID, this.task.Note, this.task.TaskState, this.Deadline).subscribe(s => this.component.UpdateInit());
     //this.component.UpdateInit()
     this.isSpawn = false;
