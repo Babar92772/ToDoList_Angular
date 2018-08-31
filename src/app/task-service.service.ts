@@ -18,6 +18,7 @@ export class TaskServiceService {
   task : Tasks;
   taskJson : string;
   update : any;
+  Deadline : string;
   url = 'https://todolistwebapi20180823030718.azurewebsites.net/api/TaskApi';
   constructor(private http: HttpClient) {   
   }
@@ -56,7 +57,13 @@ export class TaskServiceService {
     this.task.ID = id;
     this.task.Note = note;
     this.task.TaskState = status;
-    this.task.DeadLine = new Date(deadLine);
+    this.Deadline = deadLine.toString();
+    console.log('Valeur de deadLine'+deadLine);
+    if(deadLine !='' || deadLine != null || deadLine != undefined)
+    {
+      this.task.DeadLine = new Date(deadLine); 
+    }
+     
     console.log(JSON.stringify(this.task));
     console.log(this.url+'/EDIT/'+JSON.stringify(this.task),httpOptions);
     

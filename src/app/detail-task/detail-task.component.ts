@@ -15,13 +15,15 @@ export class DetailTaskComponent implements OnInit {
   @Input() task : Tasks;
   @Input() tasks : Array<Tasks>;
   Deadline : string;
-  CreateDate : string;
+  CreateDate : Date;
   isSpawn: boolean = false;
   constructor(private service : TaskServiceService, private router : Router, private component : TodolistComponent) {
     this.task = new Tasks();
   }
   
   ngOnInit() {
+    this.Deadline = (this.task.DeadLine).toString();
+    //this.Deadline = '';
   }
   
   spawn(value:boolean){
@@ -31,19 +33,13 @@ export class DetailTaskComponent implements OnInit {
   onSubmitDelete(){
     console.log('On a la tache :' + this.task.ID);
     this.service.deleteTask(this.task.ID).subscribe(s => this.component.UpdateInit());
-    //this.component.UpdateInit()
-    //this.tasks.splice(this.tasks.findIndex(t => this.task.ID === t.ID), 1);
-    //console.log('on finit le delete dans le componnent');
-    //this.router.navigate(['listTasks']);    
   }
   
   onSubmitUpdate(){
     console.log("update");
     console.log(this.task.ID);
-    if(this.Deadline != ''){
-      this.task.DeadLine = new Date(this.Deadline);
-    }    
     this.service.updateTask(this.task.ID, this.task.Note, this.task.TaskState, this.Deadline).subscribe(s => this.component.UpdateInit());
+    
     //this.component.UpdateInit()
     this.isSpawn = false;
   }
