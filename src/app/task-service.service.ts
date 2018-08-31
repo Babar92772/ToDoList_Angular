@@ -37,6 +37,7 @@ export class TaskServiceService {
     this.task.CreateDate = new Date();
     this.task.TaskState = "todo";
     this.task.DeadLine = deadLine;
+    this.task.DeadLine.setDate( this.task.DeadLine .getDate() + 1 );
     this.task.IDUserCreator = parseInt(localStorage.getItem('IdUserSession'));
     
     console.log(this.url+'/ADD/%7Btask%7D',this.task);
@@ -62,6 +63,7 @@ export class TaskServiceService {
     if(deadLine !='' || deadLine != null || deadLine != undefined)
     {
       this.task.DeadLine = new Date(deadLine); 
+      this.task.DeadLine.setDate( this.task.DeadLine .getDate() + 1 );
     }
      
     console.log(JSON.stringify(this.task));
