@@ -13,6 +13,6 @@ button:hover{
     background-color: rgb(4, 44, 177);
 }
 
-input{
+input, textarea{
     background-color: rgb(243, 204, 167);
 }
